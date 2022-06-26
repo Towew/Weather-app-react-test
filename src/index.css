@@ -1,13 +1,44 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shedoW {
+  text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.innerShedoW {
+  color: transparent;
+  text-shadow: 0px 2.5px 1px rgb(252, 252, 252),
+    0px 4.2px 0.5px rgb(209, 207, 207);
+}
+
+.border-weather {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.border-weather::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  border-image-source: radial-gradient(
+    77.25% 77.25% at 69.89% 22.75%,
+    #ffffff 0%,
+    #a8a8a8 100%
+  );
+  border-image-slice: 20;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.weather-hover:hover {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
